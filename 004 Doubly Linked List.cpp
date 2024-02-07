@@ -1,5 +1,5 @@
-#include<iostream> 				//xu ly th list rong trong menu
-using namespace std; 			//cap nhat + delete
+#include<iostream> 				
+using namespace std; 			
 								
 struct Node{
 	int data;
