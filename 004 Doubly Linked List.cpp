@@ -1,5 +1,5 @@
-#include<iostream> 				
-using namespace std; 			
+#include<iostream> 				//xu ly th list rong trong menu
+using namespace std; 			//cap nhat + delete
 								
 struct Node{
 	int data;
@@ -53,16 +53,20 @@ void AddEnd(DouList &ds , int data){
 }
 
 
-void Insert(DouList &ds,int &n){
-	int k , val ;
-	cout<<"Located = "; cin>>k;
-	cout<<"Value = "; cin>>val;
-	Node *x = new Node ;
-	x->data = val;
-	x->next = NULL;
-	x->pre = NULL;
-	
-	if (k == 0){
+void Insert(DouList &ds,int &n){      //n : so phan tu trong day
+	if (ds.head == NULL){
+		cout<<"\n\t\t---Empty---";
+	}
+	else {
+		int k , val ;
+		cout<<"Located = "; cin>>k;
+		cout<<"Value = "; cin>>val;
+		Node *x = new Node ;
+		x->data = val;
+		x->next = NULL;
+		x->pre = NULL;
+		
+		if (k == 0){
 		x->next = ds.head;
 		x->pre = NULL;
 		ds.head->pre = x;
@@ -80,13 +84,14 @@ void Insert(DouList &ds,int &n){
 		for (int i = 1 ; i <= k ; i++){
 			a = b;
 			b = b->next;
-	}
+		}
 		x->next = b;
 		x->pre = a;
 		a->next = x;
 		b->pre = x;
 	}
-	n++;	
+		n++;
+	}	
 }
 
 void Update(DouList &ds){
@@ -142,7 +147,6 @@ void Delete(DouList &ds,int &n){
 		}
 	}
 }
-
 
 
 void Scan(DouList &ds,int &n){
@@ -215,4 +219,3 @@ int main(){
 	}while(x>0);
 			
 }
-
