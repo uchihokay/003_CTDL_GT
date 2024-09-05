@@ -35,6 +35,33 @@ void PrintTree(node *t){
 }
 
 
+
+//count leaves of tree
+bool Isleafnode(node *t) {
+    return (t->left == NULL && t->right == NULL);
+}
+
+int Count_leaf(node *t){
+    if (t == NULL){
+        return 0;
+    }
+    if (Isleafnode(t) == true){
+        return 1;
+    }
+    return Count_leaf(t->left) + Count_leaf(t->right);
+}
+
+
+
+//count level of tree
+int Count_level(node *t){
+	if (t == NULL){
+		return -1;
+	}
+	return 1 + max(Count_level(t->left),Count_level(t->right));
+}
+
+
 int main(){
 	int n , x;
 	cout<<"n = ";cin>>n;
@@ -44,5 +71,8 @@ int main(){
 		cin>>x;
 		t = insert(t,x);
 	}
+
 	PrintTree(t);
+	// cout<<" Origin = "<<t->data<<endl;
+	// cout<<Count_level(t);
 }
