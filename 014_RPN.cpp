@@ -41,4 +41,5 @@ int main(){
 	stack<int> st ;                     
 	cout<<Change(st,s);
 	
+    
 }
