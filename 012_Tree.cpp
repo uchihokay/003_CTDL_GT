@@ -35,6 +35,7 @@ void Print_tree_mid(node *t){
 	}
 }
 
+//not use recursive - mid
 void Print_tree_mid2(node* root) {
     stack<node*> st;
     node* current = root;
